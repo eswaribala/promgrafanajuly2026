@@ -1,0 +1,32 @@
+Download all the yaml files(deployment-v17.yaml,postgres-deployment.yaml,postgres-pv.yaml) and store in prometehus training folder
+
+open cmd with admin privileges
+
+kubectl apply -f postgres-pv.yaml
+  
+kubectl apply -f postgres-deployment.yaml
+
+#application needs db to be created
+kubectl exec -it <pod name> -- psql -U postgres
+will see hash prompt
+# create database customerdb;
+# quit
+
+#deploy the application  
+kubectl apply -f deployment-v17.yaml
+
+#check service
+kubectl get svc
+
+#do port forward
+kubectl port-forward svc/customerservice 7074:7074
+
+or
+
+kubectl expose deployment --port 7074 customerapp --type=LoadBalancer --name=customerservicev1
+
+#go to browser
+http://localhost:7074/swagger-ui.html
+
+#expose postgres service
+kubectl expose deployment --port 5432 postgres --type=LoadBalancer --name=postgresservice
