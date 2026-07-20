@@ -1,0 +1,210 @@
+Step 1
+Download helm
+Go to
+https://github.com/helm/helm/releases
+download the file 
+Windows amd64 (hyperlink)
+
+#set env variable
+
+#Check helm version
+
+helm version
+Step2
+
+#check helm repository list
+
+helm repo list
+
+#Add repository
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+#prometheus installation
+
+Step 1: Add the Prometheus Helm Chart Repository
+
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+Update your Helm repository:
+helm repo update
+Step 2:
+kubectl create namespace prometheus
+
+Step3:
+
+helm install prometheus prometheus-community/prometheus -n prometheus
+
+Step 4:
+
+helm list -n prometheus
+Step5:
+
+kubectl get pods -n prometheus
+
+#if node exporter pod fails, run the patch
+kubectl patch -n prometheus ds prometheus-prometheus-node-exporter --type "json" -p "[{"op": "remove", "path" : "/spec/template/spec/containers/0/volumeMounts/2/mountPropagation"}]"
+
+Step6
+#Run the prometheus server, push gateway , node exporter and alert manager in localhost
+#follow the steps below
+#open bash script in administrator mode
+#go to the folder where we have port-forward.sh
+chmod 777 ./port-forward.sh
+./port-forward.sh
+
+Step 7
+Go to browser
+#prometheus server
+http://localhost:9090
+#push gateway 
+http://localhost:9091
+#node exporter
+http://localhost:9100
+#alert manager
+http://localhost:9093
+
+#grafana installation
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+helm install my-grafana grafana/grafana
+kubectl get pods,svc
+#expose grafana as service in localhost
+kubectl expose deployment --port 3000 my-grafana --type=LoadBalancer --name=grafanaservice
+#use bash script
+kubectl get secret --namespace default my-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+#open browser to access grafana
+http://localhost:3000
+#modify grafana
+helm show values grafana/grafana > values.yaml
+helm upgrade my-grafana grafana/grafana -f values.yaml
+#modify promethus configuration, download current configuration
+#go to any folder
+helm show values prometheus-community/prometheus > values.yaml
+
+#integrate java api metrics to prometheus for pull metrics
+ - job_name: 'customer-app'
+        metrics_path: '/actuator/prometheus'
+        static_configs:
+          - targets: ['host.docker.internal:7074']
+
+#after updating values.yaml file , send the updates to prometheus server
+
+helm upgrade prometheus prometheus-community/prometheus -f values.yaml -n prometheus
+
+kubectl get pods -n prometheus
+
+#configure receivers slack,pagerduty,opsgnie,customreceiver
+#alerting rules
+#alert manager
+
+#modify values.yaml
+helm upgrade prometheus prometheus-community/prometheus -f values.yaml -n prometheus
+
+#integrate node exporter to prometheus server
+#add node exporter job to prometheus
+- job_name: 'node_exporter'
+        static_configs:
+          - targets: ['prometheus-prometheus-node-exporter:9100']
+
+#after save changes, run the following 
+
+helm upgrade prometheus prometheus-community/prometheus -f values.yaml -n prometheus
+#windows exporter
+
+#download windows amd exe file
+https://github.com/prometheus-community/windows_exporter/releases
+#execute exe file by clicking on more info and run anyway
+#access metrics from
+http://localhost:9182/metrics
+
+#modify values.yaml for windows exporter
+- job_name: 'windowsexporter'
+        metrics_path: '/metrics'
+        static_configs:
+          - targets: ['ipaddress:9182']
+
+#after save changes, run the following 
+
+helm upgrade prometheus prometheus-community/prometheus -f values.yaml -n prometheus
+#download grok exporter
+https://github.com/fstab/grok_exporter/releases/tag/v1.0.0.RC5
+#extract and run
+grok_exporter -config ./example/config.yml
+
+#integrate grok exporter to prometheus
+#modify values.yaml for windows exporter
+- job_name: 'grokexporter'
+        metrics_path: '/metrics'
+        static_configs:
+          - targets: ['ipaddress:9144']
+
+#after save changes, run the following 
+
+helm upgrade prometheus prometheus-community/prometheus -f values.yaml -n prometheus
+
+#custom exporter deployment
+#download custom exporter project
+kubectl apply -f deployment-python.yaml
+kubectl apply -f service-python.yaml
+
+#prometheus integration
+- job_name: 'pythoncustomexporter'
+        metrics_path: '/metrics'
+        static_configs:
+          - targets: ['host.docker.internal:9877']
+helm upgrade prometheus prometheus-community/prometheus -f values.yaml -n prometheus
+
+
+#federation
+#create geographically separated
+kubectl create ns newyork
+kubectl create ns london
+helm install newyork-prometheus prometheus-community/prometheus -n newyork
+helm install london-prometheus prometheus-community/prometheus -n london
+#if node exporter goes to pending state due to non availability port, run the following
+#bash script
+#bash script
+ kubectl patch ds newyork-prometheus-prometheus-node-exporter -n newyork  --type='json' -p='[{"op": "replace", "path":"/spec/template/spec/containers/0/ports/0/containerPort", "value": 9101}]'
+
+#if node exporter fails
+kubectl patch -n newyork ds newyork-prometheus-prometheus-node-exporter --type "json" -p "[{"op": "remove", "path" : "/spec/template/spec/containers/0/volumeMounts/2/mountPropagation"}]"
+kubectl patch -n london ds london-prometheus-prometheus-node-exporter --type "json" -p "[{"op": "remove", "path" : "/spec/template/spec/containers/0/volumeMounts/2/mountPropagation"}]"
+ kubectl patch ds london-prometheus-prometheus-node-exporter -n london  --type='json' -p='[{"op": "replace", "path":"/spec/template/spec/containers/0/ports/0/containerPort", "value": 9102}]'
+
+
+#run prometheus in localhost
+kubectl port-forward svc/newyork-prometheus-server -n newyork 9096:80
+kubectl port-forward svc/london-prometheus-server -n london 9098:80
+
+#before helm upgrade
+kubectl edit ds london-prometheus-prometheus-node-exporter -n london
+change all the 9100 to 9102
+kubectl edit ds newyork-prometheus-prometheus-node-exporter -n newyork
+change all the 9100 to 9101
+
+#again run patch command for mounting
+
+#aggregation
+- job_name: 'global-view'
+        scrape_interval: 15s
+        honor_labels: true
+        metrics_path: '/federate'
+        params:
+         'match[]':
+           - '{__name__=~".+"}'  # Match all metrics, adjust as necessary
+        static_configs:
+          - targets: ['host.docker.internal:9096','host.docker.internal:9098']
+
+#aggregated alerting rules
+- alert: JobRequestRateSum
+           expr: sum(rate(http_server_requests_seconds_sum[24h])) by (outcome)
+           for: 2m
+           labels:
+             severity: critical
+           annotations:
+             summary: "Job Request {{ $labels.instance }} is not running"
+             description: "Job Request {{ $labels.instance }} has been down for the last 2 minutes."
+#aggregated query
+node_cpu_seconds_total{job="kubernetes-service-endpoints",instance="192.168.65.3:9100"}
+node_cpu_seconds_total{job="kubernetes-service-endpoints",instance="192.168.65.3:9101"}
+node_cpu_seconds_total{job="kubernetes-service-endpoints",instance="192.168.65.3:9102"}
