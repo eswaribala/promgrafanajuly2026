@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" href="styles/home.css" rel="stylesheet">
+</head>
+<body>
+<section>
+    <header class="headerClass">
+        <article>
+            <figure>
+                <img src="images/logo.png" class="imgLogoClass"/>
+            </figure>
+        </article>
+        <article class="titleClass">
+            <h1>Global Bank</h1>
+        </article>
+
+    </header>
+  <article>
+      <a href="#" th:href="@{/showall}" class="aClass">View Customers</a>
+  <form th:action="@{/save}" th:method="post" th:object="${customer}" class="formClass">
+     <fieldset class="fieldSetClass">
+      <legend>Customer Form</legend>
+      <label>First Name</label>
+      <input type="text" th:field="*{name.firstName}"/>
+      <label>Middle Name</label>
+      <input type="text" th:field="*{name.middleName}" />
+      <label>Last Name</label>
+      <input type="text" th:field="*{name.lastName}"/>
+      <label>Email</label>
+      <input type="text" th:field="*{email}"/>
+      <label>ContactNo</label>
+      <input type="number" th:field="*{contactNo}"/>
+      <label>Password</label>
+      <input type="password" th:field="*{password}"/>
+      <button>Submit</button>
+     </fieldset>
+  </form>
+  </article>
+  </section>
+</body>
+</html>

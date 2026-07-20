@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Customer Saved Successfully</h1>
+<table>
+    <thead>
+    <tr>
+        <td>
+          Account No
+         </td>
+
+
+    <td>
+        First Name
+    </td>
+
+
+
+
+    <td>
+        Last Name
+    </td>
+
+
+    <td>
+        Email
+    </td>
+
+
+    <td>
+        Contact No
+    </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${customerResponse.accountNo}">
+
+        </td>
+        <td th:text="${customerResponse.name.firstName}">
+
+        </td>
+        <td th:text="${customerResponse.name.lastName}">
+
+        </td>
+        <td th:text="${customerResponse.email}">
+
+        </td>
+        <td th:text="${customerResponse.contactNo}">
+
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+
+</body>
+</html>

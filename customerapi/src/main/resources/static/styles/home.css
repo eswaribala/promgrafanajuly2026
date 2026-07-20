@@ -1,0 +1,69 @@
+.headerClass{
+    width: 90%;
+    height:120px;
+    border:2px solid red;
+    margin-left: 5%;
+    background-color: black;
+    color: orange;
+}
+
+.figureClass{
+    padding: 2%;
+    width: 10%;
+}
+.imgLogoClass{
+
+    width: 10%;
+    float: left;
+}
+.imgLogoClassRight{
+
+    width: 10%;
+    float: right;
+}
+.titleClass{
+    width: 60%;
+    font-size: xx-large;
+    margin-left: 30%;
+}
+
+.formClass{
+    width: 15%;
+    background-color: lime;
+    margin-left: 40%;
+    margin-top:5%;
+    font-size: large;
+}
+.fieldSetClass{
+    width: 80%;
+    margin-left: 5%;
+    background-color: lime;
+}
+
+.legendClass{
+
+    background-color: lime;
+}
+
+button{
+    background-color: black;
+    color:lime;
+    font-size: large;
+    margin-left: 20%;
+}
+
+.aClass{
+    text-decoration: none;
+    background-color: lime;
+    color: black;
+    margin-left: 40%;
+    font-size: xx-large;
+}
+
+.aClass:hover {
+    background-color: black;
+    color: lime;
+    margin-left: 40%;
+    font-size: xx-large;
+}
+

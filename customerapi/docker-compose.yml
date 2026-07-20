@@ -1,0 +1,52 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - LC_ALL=C.UTF-8
+      - POSTGRES_DB=customerdb
+      - POSTGRES_PORT=5432
+    ports:
+      - 5432:5432
+
+
+  customer-app:
+    image: customerapp
+    build:
+      context: ./
+      dockerfile: dockerfile
+    depends_on:
+      - postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/customerdb
+
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 15
+        window: 50s
+    ports:
+       #- 8060-8070:7070
+        - 7076:7076
+    volumes:
+      - /data/compose-app
+    #networks:
+      #- boanetwork
+
+
+### put all the networks here
+#networks:
+  #boanetwork:
+networks:
+  default:
+    name: elastic
+    external: false
+
+
+  
