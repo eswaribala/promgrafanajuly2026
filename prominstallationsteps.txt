@@ -89,9 +89,13 @@ helm show values prometheus-community/prometheus > values.yaml
 
 #after updating values.yaml file , send the updates to prometheus server
 
+
 helm upgrade prometheus prometheus-community/prometheus -f values.yaml -n prometheus
 
 kubectl get pods -n prometheus
+
+#to connect prometheus to grafana select data source as prometheus and add the following url
+http://host.docker.internal:9090
 
 #configure receivers slack,pagerduty,opsgnie,customreceiver
 #alerting rules
