@@ -1,0 +1,16 @@
+1. helm install postgres-exporter prometheus-community/prometheus-postgres-exporter
+#create postgres exporter folder
+#cd to postgres exporter folder
+2.helm show values prometheus-community/prometheus-postgres-exporter > values.yaml
+#after updating db configuration
+helm upgrade postgres-exporter prometheus-community/prometheus-postgres-exporter -f values.yaml
+#expose grafana as service in localhost
+kubectl expose deployment --port 9187 postgres-exporter-prometheus-postgres-exporter --type=LoadBalancer --name=postgresexporterservice
+#adding job in prometheus values.yaml file
+
+- job_name: 'postgres_exporter'
+        static_configs:
+          - targets: ['host.docker.internal:9187']
+
+#upgrade helm
+helm upgrade prometheus prometheus-community/prometheus -f values.yaml -n prometheus
