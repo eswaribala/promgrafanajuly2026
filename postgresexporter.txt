@@ -1,4 +1,4 @@
-1. helm install postgres-exporter prometheus-community/prometheus-postgres-exporter
+1. helm install postgres-exporter prometheus-community/prometheus-postgres-exporter --set config.datasource.host=host.docker.internal --set config.datasource.user=postgres  --set config.datasource.password= postgres --set config.datasource.port=5432 --set config.datasource.database=cutsomerdb --set config.datasource.sslmode=disable
 #create postgres exporter folder
 #cd to postgres exporter folder
 2.helm show values prometheus-community/prometheus-postgres-exporter > values.yaml
