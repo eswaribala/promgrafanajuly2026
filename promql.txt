@@ -270,3 +270,14 @@ avg_over_time((1 - up)[6h:]) -- In last 6 hours how long it was down
 Group by Query
 sum(jvm_memory_used_bytes) by (id)
 sum(http_server_requests_seconds_sum) by (status)
+=================
+compare time stamp
+process_cpu_usage
+-
+process_cpu_usage offset 2h
+
+
+avg_over_time(process_cpu_usage[6h])
+-
+avg_over_time(process_cpu_usage[6h] offset 6h)
+
