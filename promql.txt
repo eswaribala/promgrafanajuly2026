@@ -1,0 +1,272 @@
+
+1. Basic Queries
+up – Check if targets are up.
+node_cpu_seconds_total – Get raw CPU usage data.
+node_memory_MemAvailable_bytes – Available memory.
+node_filesystem_size_bytes – Total disk space.
+node_network_receive_bytes_total – Total received network bytes.
+============================================
+Float Queries
+Code starts with 2 like 200
+prometheus_http_requests_total{code=~"2.*", job="prometheus"}
+prometheus_http_requests_total{code=~"2.*|4.*"}
+===========================================
+Instance Vector
+Using an expression like some[6h] shows metrics from the last six hours for the series of some metrics.
+
+http_total_requests{job="Prometheus", method="post", code="404"} [5m]
+==============================================
+Rate Queries
+HTTP requests per second (last 5 minutes)
+
+rate(http_requests_total[5m])
+
+
+Requests per second by status code
+
+rate(http_requests_total[5m]) by (status)
+
+
+Network received bytes per second (node exporter)
+
+rate(node_network_receive_bytes_total[1m]) by (device)
+
+
+Error rate percentage
+
+100 * (rate(http_requests_total{status=~"5.."}[5m])
+      /
+       rate(http_requests_total[5m]))
+
+===========================================
+Range Vectors
+A duration to cover the length of that range goes at the end of the vector. For example, this gives metrics for the previous two minutes:
+
+node_scrape_collector_duration_seconds{job="node"}[2m]
+http_requests_total offset 2d
+#data you have collected and want to analyze over the period time in terms of percentage of change
+rate(http_requests_total[1h] offset 2d)
+rate(node_cpu_seconds_total[5m]) – CPU usage rate over 5 minutes.
+rate(http_requests_total[1m]) – HTTP request rate.
+irate(node_network_receive_bytes_total[30s]) – Instantaneous network traffic rate.
+increase(http_requests_total[1h]) – Increase in HTTP requests over 1 hour.
+delta(node_cpu_seconds_total[5m]) – Change in CPU usage.
+==============================================
+SubQuery
+Here, you can check the 4-minute rate of http requests, but also over the course of two hours, at a timestamp resolution of 30 seconds.
+rate(http_requests_total[4m])[2h:30s]
+==========================================
+2. Label Filtering
+node_cpu_seconds_total{mode="idle"} – Filter by CPU idle time.
+http_requests_total{status="500"} – Filter HTTP 500 responses.
+node_filesystem_avail_bytes{mountpoint="/"} – Free space on root.
+node_network_transmit_bytes_total{device="eth0"} – Outgoing traffic on eth0.
+node_load1{instance="localhost:9100"} – System load for a specific instance.
+================================================================
+3. Aggregation Functions
+sum(node_cpu_seconds_total) – Total CPU usage.
+avg(node_cpu_seconds_total) – Average CPU time.
+max(node_memory_MemAvailable_bytes) – Max available memory.
+min(node_filesystem_free_bytes) – Min available disk space.
+count(node_network_receive_bytes_total) – Count of network devices.
+================================================================
+4. Rate Calculations
+rate(node_cpu_seconds_total[5m]) – CPU usage rate over 5 minutes.
+rate(http_requests_total[1m]) – HTTP request rate.
+irate(node_network_receive_bytes_total[30s]) – Instantaneous network traffic rate.
+increase(http_requests_total[1h]) – Increase in HTTP requests over 1 hour.
+delta(node_cpu_seconds_total[5m]) – Change in CPU usage.
+===================================================================
+5. CPU Metrics
+100 * (1 - avg(rate(node_cpu_seconds_total{mode="idle"}[5m]))) – CPU utilization percentage.
+sum(rate(node_cpu_seconds_total{mode!="idle"}[5m])) by (instance) – Non-idle CPU usage per instance.
+avg_over_time(node_load1[1h]) – Average system load.
+topk(5, rate(node_cpu_seconds_total[5m])) – Top 5 CPU-consuming instances.
+count(rate(node_cpu_seconds_total[1m])) – Active CPU cores.
+==========================================================
+6. Memory Monitoring
+node_memory_MemTotal_bytes - node_memory_MemFree_bytes – Used memory.
+node_memory_Active_bytes / node_memory_MemTotal_bytes * 100 – Active memory percentage.
+sum(node_memory_Cached_bytes) by (instance) – Cached memory usage.
+max(rate(node_memory_SwapTotal_bytes[1h])) – Max swap usage.
+node_memory_Buffers_bytes / node_memory_MemTotal_bytes * 100 – Buffered memory percentage.
+============================================================================================================
+7. Disk Monitoring
+node_filesystem_avail_bytes{mountpoint="/"} – Free space in root.
+rate(node_disk_read_bytes_total[5m]) – Disk read rate.
+rate(node_disk_written_bytes_total[5m]) – Disk write rate.
+sum(node_disk_io_time_seconds_total{device="sda"}) – Total disk I/O time.
+(node_filesystem_size_bytes - node_filesystem_free_bytes) / node_filesystem_size_bytes * 100 – Disk usage percentage.
+================================================================================
+8. Network Monitoring
+rate(node_network_receive_bytes_total[5m]) – Incoming traffic.
+rate(node_network_transmit_bytes_total[5m]) – Outgoing traffic.
+avg(node_network_transmit_errs_total) by (instance) – Network transmit errors.
+sum(rate(node_network_packets_dropped_total[1h])) – Dropped network packets.
+node_sockstat_TCP_alloc – Active TCP connections.
+==================================================================================
+9. HTTP Application Metrics
+rate(http_requests_total[5m]) – HTTP request rate.
+histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) – 95th percentile response time.
+sum(http_requests_total{method="GET"}) – Count of GET requests.
+sum(rate(http_requests_total[5m])) by (method) – Request rate by method.
+sum(http_requests_total{status=~"5.."}) – Count of 5xx errors.
+=======================================================================================
+10. Error Rate Monitoring
+sum(rate(http_requests_total{status=~"5.."}[5m])) / sum(rate(http_requests_total[5m])) * 100 – HTTP 5xx error rate.
+increase(http_requests_total{status=~"4.."}[1h]) – Increase in 4xx errors.
+rate(http_requests_total{status=~"2.."}[5m]) – 2xx success request rate.
+topk(5, http_requests_total) – Top 5 endpoints by request count.
+count(http_requests_total{status=~"4.."}) – Count of 4xx errors.
+==================================================================================
+11. Response Time Analysis
+histogram_quantile(0.99, rate(http_request_duration_seconds_bucket[5m])) – 99th percentile latency.
+histogram_quantile(0.50, rate(http_request_duration_seconds_bucket[5m])) – Median latency.
+avg(rate(http_request_duration_seconds_sum[5m]) / rate(http_request_duration_seconds_count[5m])) – Average response time.
+rate(http_request_duration_seconds_bucket{le="0.1"}[5m]) – Requests under 100ms.
+sum(rate(http_request_duration_seconds_count[5m])) – Total request count.
+=======================================================================================
+Gauge Queries
+In Prometheus, gauges are metrics that represent a single numerical value that can go up or down, like memory usage, temperature, or queue length.
+memory_usage_bytes
+memory_usage_bytes{instance="server1", job="app"}
+sum(memory_usage_bytes)
+max_over_time(memory_usage_bytes[5m])
+min_over_time(memory_usage_bytes[5m])
+avg_over_time(memory_usage_bytes[1h])
+
+memory_usage_bytes[30m]
+(memory_usage_bytes / memory_total_bytes) * 100
+==================================================
+Counter Queries
+A Counter is a metric that only increases (or resets to 0). It's ideal for:
+
+HTTP requests served
+
+Errors occurred
+
+Bytes sent
+
+Anything cumulative
+
+http_requests_total
+
+rate(http_requests_total[5m]) // rate of change
+rate(metric[1m])   // More spiky, very recent data
+rate(metric[5m])   // Smoother
+rate(metric[1h])   // Very smooth, long-term trends
+//increase over time
+Returns total number of new events in the last 5 minutes.
+
+Use when you want to know how much happened over a time window (not per second).
+increase(http_requests_total[5m])
+
+sum(rate(http_requests_total[5m])) by (job)
+topk(3, rate(http_requests_total[5m]))
+rate(http_errors_total[5m]) / rate(http_requests_total[5m])
+(rate(http_errors_total[5m]) / rate(http_requests_total[5m])) * 100
+
+
+
+==================================================================
+Histogram Queries
+A histogram consists of multiple related time series, such as:
+
+Suffix	Description
+_bucket	Counts of observations ≤ a given le (less than or equal) bucket value
+_count	Total number of observations
+_sum	Sum of all observed values
+
+//Request Rate
+
+rate(http_request_duration_seconds_count[5m])
+
+//Average Request Duration
+rate(http_request_duration_seconds_sum[5m]) / rate(http_request_duration_seconds_count[5m])
+
+// Latency Percentiles (approximate)
+histogram_quantile(0.95, rate(prometheus_http_request_duration_seconds_bucket[5m]))
+
+histogram_quantile(0.5, rate(prometheus_http_request_duration_seconds_bucket[5m]))   // 50th percentile (median)
+histogram_quantile(0.99, rate(prometheus_http_request_duration_seconds_bucket[5m]))  // 99th percentile
+
+//Distribution Over Time
+rate(http_request_duration_seconds_bucket[5m])
+
+//Group Percentiles by Label
+histogram_quantile(0.95, sum by (le, job) (rate(prometheus_http_request_duration_seconds_bucket[5m])))
+
+a) p95 / p99 latency
+
+Aggregate first, then apply histogram_quantile().
+
+histogram_quantile(
+  0.95,
+  sum by (le) (
+    rate(http_request_duration_seconds_bucket[5m])
+  )
+)
+
+
+Per route (example labels: method, path):
+
+histogram_quantile(
+  0.95,
+  sum by (le, method, path) (
+    rate(http_request_duration_seconds_bucket[5m])
+  )
+)
+
+
+Per instance:
+
+histogram_quantile(
+  0.95,
+  sum by (le, instance) (
+    rate(http_request_duration_seconds_bucket[5m])
+  )
+)
+
+b) Average latency
+sum(rate(http_request_duration_seconds_sum[5m]))
+/
+sum(rate(http_request_duration_seconds_count[5m]))
+
+c) Requests under an SLO threshold (e.g., ≤ 1s)
+sum(rate(http_request_duration_seconds_bucket{le="1"}[5m]))
+/
+sum(rate(http_request_duration_seconds_count[5m]))
+
+==================================================================
+Summary Query
+
+Average latency:
+
+rate(http_request_duration_seconds_sum[5m])
+/
+rate(http_request_duration_seconds_count[5m])
+
+
+Total requests per second:
+
+rate(http_request_duration_seconds_count[5m])
+===========================================
+12. Advanced Queries
+predict_linear(node_cpu_seconds_total[5m], 3600) – Predict CPU usage in the next hour.
+stddev_over_time(node_load1[1h]) – Standard deviation of system load.
+rate(process_resident_memory_bytes[5m]) – Resident memory usage rate.
+sum_over_time(http_requests_total[1h]) – Total HTTP requests over an hour.
+count(node_network_receive_bytes_total > 0) – Active network interfaces.
+============================================================================================
+And
+jvm_memory_max_bytes {id="Eden Space"} > 1000000 and jvm_memory_used_bytes {id="Eden Space"} >100000
+node_disk_read_bytes_total {job="node_exporter"} >10000 and node_disk_read_time_seconds_total {job="node_exporter"} >0.1
+
+ sum(http_server_requests_seconds_count{status="200"}) / sum(http_server_requests_seconds_count) > 0.5
+============================================================================================
+changes(up[6h])--History of up state
+avg_over_time((1 - up)[6h:]) -- In last 6 hours how long it was down
+==============================
+Group by Query
+sum(jvm_memory_used_bytes) by (id)
+sum(http_server_requests_seconds_sum) by (status)
