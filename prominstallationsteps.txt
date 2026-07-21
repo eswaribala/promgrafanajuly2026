@@ -82,7 +82,8 @@ helm upgrade my-grafana grafana/grafana -f values.yaml
 helm show values prometheus-community/prometheus > values.yaml
 
 #integrate java api metrics to prometheus for pull metrics
- - job_name: 'customer-app'
+ scrape_configs:
+      - job_name: 'customer-app'
         metrics_path: '/actuator/prometheus'
         static_configs:
           - targets: ['host.docker.internal:7074']
