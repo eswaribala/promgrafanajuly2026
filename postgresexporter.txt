@@ -1,4 +1,4 @@
-1. helm install postgres-exporter   prometheus-community/prometheus-postgres-exporter   --set config.datasource.host=postgresservice --set config.datasource.user=postgres   --set config.datasource.password=postgres --set-string config.datasource.port='5432' --set config.datasource.database=postgres --set config.datasource.sslmode=disable
+1. helm install postgres-exporter   prometheus-community/prometheus-postgres-exporter   --set config.datasource.host=postgresservice --set config.datasource.user=postgres   --set config.datasource.password=postgres --set-string config.datasource.port='5432' --set config.datasource.database=customerdb --set config.datasource.sslmode=disable
 #create postgres exporter folder
 #cd to postgres exporter folder
 2.helm show values prometheus-community/prometheus-postgres-exporter > values.yaml
