@@ -135,6 +135,11 @@ helm upgrade prometheus prometheus-community/prometheus -f values.yaml -n promet
 #snmp exporter
 helm install prometheus-snmp -n prometheus prometheus-community/prometheus-snmp-exporter
 kubectl expose deployment --port 9116 prometheus-snmp-prometheus-snmp-exporter -n prometheus --type=LoadBalancer --
+#install crd operator
+helm install prometheus-operator-crds  prometheus-community/prometheus-operator-crds -n prometheus
+#verify
+kubectl get crd servicemonitors.monitoring.coreos.com
+# retrieve value.yml
 helm show values prometheus-community/prometheus-snmp-exporter > values.yaml
 helm upgrade prometheus-snmp prometheus-community/prometheus-snmp-exporter -n prometheus -f values.yaml
 
