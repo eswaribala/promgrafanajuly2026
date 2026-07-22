@@ -267,7 +267,7 @@ helm upgrade newyork-prometheus prometheus-community/prometheus -f values.yaml -
          'match[]':
            - '{__name__=~".+"}'  # Match all metrics, adjust as necessary
         static_configs:
-          - targets: ['host.docker.internal:9096','host.docker.internal:9098']
+          - targets: ['host.docker.internal:9096','host.docker.internal:9090']
 
 #aggregated alerting rules
 - alert: JobRequestRateSum
