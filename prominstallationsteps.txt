@@ -143,8 +143,9 @@ kubectl get crd servicemonitors.monitoring.coreos.com
 helm show values prometheus-community/prometheus-snmp-exporter > values.yaml
 #modify sevice.monitor section enabled  true and params
 helm upgrade prometheus-snmp prometheus-community/prometheus-snmp-exporter -n prometheus -f values.yaml
-
-name=snmpservice
+#snmp simulator
+docker run -d --name snmp-simulator -p 1161:161/udp tandrup/snmpsim name=snmpservice
+#integrate to prometheus
 - job_name: 'snmpexporter'
         metrics_path: '/metrics'
         static_configs:
