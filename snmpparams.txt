@@ -1,0 +1,30 @@
+params:
+   - name: main-firewall
+     target: host.docker.internal:1161
+
+     module:
+      - if_mib
+
+     auth:
+      - public_v2
+
+     labels:
+       release: kube-prometheus-stack
+
+     interval: 30s
+     scrapeTimeout: 20s
+
+     additionalMetricsRelabels:
+       device_type: firewall
+       firewall_name: main-firewall
+       location: chennai
+
+     relabelings:
+       - sourceLabels:
+          - __address__
+         targetLabel: __param_target
+
+       - sourceLabels:
+          - __param_target
+         targetLabel: instance
+    #   additionalMetricsRelabelConfigs: []
