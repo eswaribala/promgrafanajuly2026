@@ -282,3 +282,7 @@ helm upgrade newyork-prometheus prometheus-community/prometheus -f values.yaml -
 node_cpu_seconds_total{job="kubernetes-service-endpoints",instance="192.168.65.3:9100"}
 node_cpu_seconds_total{job="kubernetes-service-endpoints",instance="192.168.65.3:9101"}
 node_cpu_seconds_total{job="kubernetes-service-endpoints",instance="192.168.65.3:9102"}
+
+#autoscale prometheus server 
+
+kubectl autoscale deployment <deploymentname> --min=1 --max=4 --cpu-percent=20
