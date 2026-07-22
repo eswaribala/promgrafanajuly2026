@@ -131,6 +131,16 @@ http://localhost:9182/metrics
 #after save changes, run the following 
 
 helm upgrade prometheus prometheus-community/prometheus -f values.yaml -n prometheus
+#download snmp exporter
+#snmp exporter
+helm install prometheus-snmp -n prometheus prometheus-community/prometheus-snmp-exporter
+kubectl expose deployment --port 9116 prometheus-snmp-prometheus-snmp-exporter -n prometheus --type=LoadBalancer --name=snmpservice
+- job_name: 'snmpexporter'
+        metrics_path: '/metrics'
+        static_configs:
+          - targets: ['host.docker.internal:9116']
+
+
 #download grok exporter
 https://github.com/fstab/grok_exporter/releases/tag/v1.0.0.RC5
 #extract and run
