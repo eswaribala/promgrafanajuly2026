@@ -1,5 +1,5 @@
 #download aspdeployment_v8.yml
-kubectl apply -f appdeployment-v8.yml
+kubectl apply -f aspdeployment_v8.yml
 #expose the svc
 kubectl expose deployment --port 7078 invapp --type=LoadBalancer --name=invservicev1
 or
