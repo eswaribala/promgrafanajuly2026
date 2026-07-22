@@ -145,6 +145,9 @@ helm show values prometheus-community/prometheus-snmp-exporter > values.yaml
 helm upgrade prometheus-snmp prometheus-community/prometheus-snmp-exporter -n prometheus -f values.yaml
 #snmp simulator
 docker run -d --name snmp-simulator -p 1161:161/udp tandrup/snmpsim
+#test snmp firewall 
+http://localhost:9116/snmp?target=host.docker.internal:1161&module=if_mib&auth=public_v2
+
 #integrate to prometheus
 - job_name: 'snmpexporter'
         metrics_path: '/metrics'
