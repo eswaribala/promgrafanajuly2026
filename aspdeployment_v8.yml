@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: invservice
+  labels:
+    app: invapp
+spec:
+  ports:
+  - port: 80
+    name: http
+  selector:
+    app: invapp
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: invapp
+spec:
+  selector:
+
+    matchLabels:
+
+      app: invapp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: invapp
+        version: v1
+    spec:
+      containers:
+      - name: invapp
+        image: eswaribala/rpsinteljune2023:invapp
+        
+        ports:
+        - containerPort: 80
+        env:
+
+            - name: ASPNETCORE_ENVIRONMENT
+
+              value: DEVELOPMENT
+
+            - name: SQLSERVER_CONNECTIONSTRING1
+
+              value: "Server=Server=host.docker.internal,1406;Database=IntelInventoryDB;User ID=sa;Password=Vignesh@95;TrustServerCertificate=true;MultipleActiveResultSets=true"
+            - name: SQLSERVER_CONNECTIONSTRING2
+
+              value: "Server=Server=host.docker.internal,1406;Database=IntelIdentityInventoryDB;User ID=sa;Password=Vignesh@95;TrustServerCertificate=true;MultipleActiveResultSets=true"
