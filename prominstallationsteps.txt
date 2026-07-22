@@ -134,7 +134,7 @@ helm upgrade prometheus prometheus-community/prometheus -f values.yaml -n promet
 #download snmp exporter
 #snmp exporter
 helm install prometheus-snmp -n prometheus prometheus-community/prometheus-snmp-exporter
-kubectl expose deployment --port 9116 prometheus-snmp-prometheus-snmp-exporter -n prometheus --type=LoadBalancer --
+kubectl expose deployment --port 9116 prometheus-snmp-prometheus-snmp-exporter -n prometheus --type=LoadBalancer --name=snmpexporterservicev1
 #install crd operator
 helm install prometheus-operator-crds  prometheus-community/prometheus-operator-crds -n prometheus
 #verify
