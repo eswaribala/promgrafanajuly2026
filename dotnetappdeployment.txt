@@ -2,3 +2,5 @@
 kubectl apply -f appdeployment-v8.yml
 #expose the svc
 kubectl expose deployment --port 7078 invapp --type=LoadBalancer --name=invservicev1
+or
+kubectl port-forward pod/invapp-7d78df7c5-nznp9 7076:80
