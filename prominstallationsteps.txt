@@ -171,6 +171,8 @@ http://localhost:9116/snmp?target=host.docker.internal:1161&module=if_mib&auth=p
       - target_label: __address__
         replacement: host.docker.internal:9116
 
+#upgrade prometheus server
+helm upgrade prometheus prometheus-community/prometheus -f values.yaml -n prometheus
 
 #download grok exporter
 https://github.com/fstab/grok_exporter/releases/tag/v1.0.0.RC5
