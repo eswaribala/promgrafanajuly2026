@@ -234,6 +234,28 @@ change all the 9100 to 9101
 kubectl port-forward <pods/london-prometheus-prometheus-node-exporter-2vgkf> 9102:9100 -n london
 kubectl port-forward <pods/newyork-prometheus-prometheus-node-exporter-2vgkf> 9101:9100 -n newyork
 
+#create newyorkserver folder
+helm show values prometheus-community/prometheus > values.yaml
+#edit values.yaml file in newyork folder
+prometheus.yml:
+    rule_files:
+      - /etc/config/recording_rules.yml
+      - /etc/config/alerting_rules.yml
+      ## Below two files are DEPRECATED will be removed from this default values file
+      - /etc/config/rules
+      - /etc/config/alerts
+    scrape_configs:
+      - job_name: node_exporter
+        static_configs:
+          - targets:
+              - newyork-prometheus-prometheus-node-exporter:9100
+
+#save file and helm upgrade
+kubectl delete daemonset newyork-prometheus-prometheus-node-exporter -n newyork
+helm upgrade newyork-prometheus prometheus-community/prometheus -f values.yaml -n newyork
+
+
+
 #again run patch command for mounting
 
 #aggregation
