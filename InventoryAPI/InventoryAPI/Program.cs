@@ -220,9 +220,12 @@ app.UseCors(policyName);
 
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseMetricServer();
+//app.UseMetricServer();
 app.UseHttpMetrics();
+app.MapMetrics("/metrics");
 app.MapControllers();
+// Expose /metrics before HTTPS redirection
+
 app.UseSwagger();
 
 app.Run();
