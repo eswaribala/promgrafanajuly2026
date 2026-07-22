@@ -230,6 +230,10 @@ change all the 9100 to 9102
 kubectl edit ds newyork-prometheus-prometheus-node-exporter -n newyork
 change all the 9100 to 9101
 
+#do port forward
+kubectl port-forward <pods/london-prometheus-prometheus-node-exporter-2vgkf> 9102:9100 -n london
+kubectl port-forward <pods/newyork-prometheus-prometheus-node-exporter-2vgkf> 9101:9100 -n newyork
+
 #again run patch command for mounting
 
 #aggregation
