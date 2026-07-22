@@ -149,10 +149,27 @@ docker run -d --name snmp-simulator -p 1161:161/udp tandrup/snmpsim
 http://localhost:9116/snmp?target=host.docker.internal:1161&module=if_mib&auth=public_v2
 
 #integrate to prometheus
-- job_name: 'snmpexporter'
-        metrics_path: '/metrics'
-        static_configs:
-          - targets: ['host.docker.internal:9116']
+- job_name: 'snmp'
+
+    metrics_path: /snmp
+
+    params:
+      module: [if_mib]
+      auth: [public_v2]
+
+    static_configs:
+      - targets:
+          - host.docker.internal:1161
+
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+
+      - source_labels: [__param_target]
+        target_label: instance
+
+      - target_label: __address__
+        replacement: host.docker.internal:9116
 
 
 #download grok exporter
