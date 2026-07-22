@@ -1,0 +1,218 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\IntelJun2023\\InventoryAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|e:\\inteljun2023\\inventoryapi\\inventoryapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|solutionrelative:inventoryapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|e:\\inteljun2023\\inventoryapi\\inventoryapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|solutionrelative:inventoryapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|e:\\inteljun2023\\inventoryapi\\inventoryapi\\repositories\\iproductpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|solutionrelative:inventoryapi\\repositories\\iproductpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|e:\\inteljun2023\\inventoryapi\\inventoryapi\\controllers\\productpublishercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|solutionrelative:inventoryapi\\controllers\\productpublishercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|e:\\inteljun2023\\inventoryapi\\inventoryapi\\configurations\\swaggerconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|solutionrelative:inventoryapi\\configurations\\swaggerconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|e:\\inteljun2023\\inventoryapi\\inventoryapi\\configurations\\csvoutputformatter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|solutionrelative:inventoryapi\\configurations\\csvoutputformatter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BBBA46A-0D19-4A51-9FCD-83A959EDE541}|docker-compose.dcproj|e:\\inteljun2023\\inventoryapi\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{3BBBA46A-0D19-4A51-9FCD-83A959EDE541}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|e:\\inteljun2023\\inventoryapi\\inventoryapi\\inventoryapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|solutionrelative:inventoryapi\\inventoryapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|e:\\inteljun2023\\inventoryapi\\inventoryapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|solutionrelative:inventoryapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|e:\\inteljun2023\\inventoryapi\\inventoryapi\\dtos\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|solutionrelative:inventoryapi\\dtos\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|e:\\inteljun2023\\inventoryapi\\inventoryapi\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AAA528-66BB-45BD-916E-0DD8F4A45D8C}|InventoryAPI\\InventoryAPI.csproj|solutionrelative:inventoryapi\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{de1fc918-f32e-4dd7-a915-1792a051f26b}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SwaggerConfiguration.cs",
+              "DocumentMoniker": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\Configurations\\SwaggerConfiguration.cs",
+              "RelativeDocumentMoniker": "InventoryAPI\\Configurations\\SwaggerConfiguration.cs",
+              "ToolTip": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\Configurations\\SwaggerConfiguration.cs",
+              "RelativeToolTip": "InventoryAPI\\Configurations\\SwaggerConfiguration.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T14:13:03.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CsvOutputFormatter.cs",
+              "DocumentMoniker": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\Configurations\\CsvOutputFormatter.cs",
+              "RelativeDocumentMoniker": "InventoryAPI\\Configurations\\CsvOutputFormatter.cs",
+              "ToolTip": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\Configurations\\CsvOutputFormatter.cs",
+              "RelativeToolTip": "InventoryAPI\\Configurations\\CsvOutputFormatter.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T14:13:03.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductPublisherController.cs",
+              "DocumentMoniker": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\Controllers\\ProductPublisherController.cs",
+              "RelativeDocumentMoniker": "InventoryAPI\\Controllers\\ProductPublisherController.cs",
+              "ToolTip": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\Controllers\\ProductPublisherController.cs",
+              "RelativeToolTip": "InventoryAPI\\Controllers\\ProductPublisherController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T14:13:03.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "InventoryAPI\\appsettings.json",
+              "ToolTip": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\appsettings.json",
+              "RelativeToolTip": "InventoryAPI\\appsettings.json",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACYAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-19T14:13:03.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\Program.cs",
+              "RelativeDocumentMoniker": "InventoryAPI\\Program.cs",
+              "ToolTip": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\Program.cs",
+              "RelativeToolTip": "InventoryAPI\\Program.cs",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAAAN4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T14:13:03.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IProductPublisher.cs",
+              "DocumentMoniker": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\Repositories\\IProductPublisher.cs",
+              "RelativeDocumentMoniker": "InventoryAPI\\Repositories\\IProductPublisher.cs",
+              "ToolTip": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\Repositories\\IProductPublisher.cs",
+              "RelativeToolTip": "InventoryAPI\\Repositories\\IProductPublisher.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T14:13:03.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "InventoryAPI.csproj",
+              "DocumentMoniker": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\InventoryAPI.csproj",
+              "RelativeDocumentMoniker": "InventoryAPI\\InventoryAPI.csproj",
+              "ToolTip": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\InventoryAPI.csproj",
+              "RelativeToolTip": "InventoryAPI\\InventoryAPI.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-19T14:13:03.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Message.cs",
+              "DocumentMoniker": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\DTOS\\Message.cs",
+              "RelativeDocumentMoniker": "InventoryAPI\\DTOS\\Message.cs",
+              "ToolTip": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\DTOS\\Message.cs",
+              "RelativeToolTip": "InventoryAPI\\DTOS\\Message.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T14:13:03.311Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "InventoryAPI\\Controllers\\ProductsController.cs",
+              "ToolTip": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "InventoryAPI\\Controllers\\ProductsController.cs",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAkwE0AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T14:13:03.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "InventoryAPI\\Controllers\\CategoriesController.cs",
+              "ToolTip": "E:\\IntelJun2023\\InventoryAPI\\InventoryAPI\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "InventoryAPI\\Controllers\\CategoriesController.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T14:13:03.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "E:\\IntelJun2023\\InventoryAPI\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "E:\\IntelJun2023\\InventoryAPI\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-08-19T14:13:03.325Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

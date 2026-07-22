@@ -1,0 +1,153 @@
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.deps.json
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.runtimeconfig.json
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\appsettings.Development.json
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\appsettings.json
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.exe
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.AspNetCore.Mvc.Versioning.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.OpenApi.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.EntityFrameworkCore.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Confluent.Kafka.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.Extensions.Identity.Core.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.Extensions.Identity.Stores.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.Server.Core.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.Server.Transports.AspNetCore.SystemTextJson.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.Server.Transports.AspNetCore.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.Server.Ui.Playground.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL-Parser.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.IdentityModel.Logging.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.DataLoader.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.Server.Transports.Subscriptions.Abstractions.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.Data.SqlClient.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\System.Reactive.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.NewtonsoftJson.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.Identity.Client.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.pdb
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\System.Reactive.xml
+G:\Local disk\IntelJun2023\InventoryAPI\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+G:\Local disk\IntelJun2023\InventoryAPI\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+G:\Local disk\IntelJun2023\InventoryAPI\obj\Debug\docker-compose.dcproj.CopyComplete
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Prometheus.AspNetCore.dll
+G:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Prometheus.NetStandard.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.deps.json
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.runtimeconfig.json
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\appsettings.Development.json
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\appsettings.json
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.exe
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.AspNetCore.Mvc.Versioning.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.OpenApi.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.EntityFrameworkCore.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Confluent.Kafka.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.Server.Core.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.Server.Transports.AspNetCore.SystemTextJson.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.Server.Transports.AspNetCore.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.Server.Ui.Playground.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Prometheus.AspNetCore.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Prometheus.NetStandard.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL-Parser.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.IdentityModel.Logging.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.DataLoader.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.Server.Transports.Subscriptions.Abstractions.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.Data.SqlClient.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\System.Reactive.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.NewtonsoftJson.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.Identity.Client.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.pdb
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\System.Reactive.xml
+F:\Local disk\IntelJun2023\InventoryAPI\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+F:\Local disk\IntelJun2023\InventoryAPI\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+F:\Local disk\IntelJun2023\InventoryAPI\obj\Debug\docker-compose.dcproj.CopyComplete
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Splunk.Logging.Common.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Serilog.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Serilog.Sinks.Splunk.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Serilog.Extensions.Hosting.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Serilog.Extensions.Logging.dll
+F:\Local disk\IntelJun2023\InventoryAPI\bin\Debug\Serilog.Sinks.PeriodicBatching.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\appsettings.Development.json
+E:\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.deps.json
+E:\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.runtimeconfig.json
+E:\IntelJun2023\InventoryAPI\bin\Debug\appsettings.json
+E:\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.staticwebassets.endpoints.json
+E:\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.exe
+E:\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Serilog.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.AspNetCore.Mvc.Versioning.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.OpenApi.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.EntityFrameworkCore.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Confluent.Kafka.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Splunk.Logging.Common.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.Server.Core.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.Server.Transports.AspNetCore.SystemTextJson.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Serilog.Sinks.Console.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Serilog.Sinks.Splunk.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Serilog.Extensions.Hosting.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Serilog.Extensions.Logging.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.Server.Transports.AspNetCore.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.Server.Ui.Playground.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Prometheus.AspNetCore.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Prometheus.NetStandard.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Newtonsoft.Json.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\GraphQL-Parser.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.IdentityModel.Logging.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.DataLoader.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.Server.Transports.Subscriptions.Abstractions.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Serilog.Sinks.PeriodicBatching.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.Data.SqlClient.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\System.Reactive.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\GraphQL.NewtonsoftJson.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\Microsoft.Identity.Client.dll
+E:\IntelJun2023\InventoryAPI\bin\Debug\InventoryAPI.pdb
+E:\IntelJun2023\InventoryAPI\bin\Debug\System.Reactive.xml
+E:\IntelJun2023\InventoryAPI\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+E:\IntelJun2023\InventoryAPI\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+E:\IntelJun2023\InventoryAPI\obj\Debug\docker-c.35A3FFBA.Up2Date

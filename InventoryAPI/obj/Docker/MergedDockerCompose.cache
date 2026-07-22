@@ -1,0 +1,97 @@
+name: dockercompose12051018684199230897
+services:
+  grafana:
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: P@ssw0rd
+    image: grafana/grafana
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 3000
+        published: "3000"
+        protocol: tcp
+    restart: always
+  inventoryapi:
+    build:
+      context: F:\Local disk\IntelJun2023\InventoryAPI
+      dockerfile: InventoryAPI/Dockerfile
+    depends_on:
+      sqlserverinventoryservice:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: inventoryapi
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+      - mode: ingress
+        target: 80
+        published: "8085"
+        protocol: tcp
+      - mode: ingress
+        target: 443
+        protocol: tcp
+      - mode: ingress
+        target: 443
+        published: "8087"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Dell\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Dell\AppData\Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  prometheus:
+    image: prom/prometheus
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 9090
+        published: "9090"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: F:\Local disk\IntelJun2023\InventoryAPI\prometheus.yml
+        target: /etc/prometheus43543/prometheus.yml
+        read_only: true
+        bind:
+          create_host_path: true
+  sqlserverinventoryservice:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Vignesh@95
+    expose:
+      - "1433"
+    hostname: sqlserverinventoryservice
+    image: mcr.microsoft.com/mssql/server
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "1406"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: F:\Local disk\IntelJun2023\InventoryAPI\invapi
+        target: /var/opt/mssql/data
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose12051018684199230897_default
