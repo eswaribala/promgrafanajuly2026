@@ -136,7 +136,7 @@ helm upgrade prometheus prometheus-community/prometheus -f values.yaml -n promet
 helm install prometheus-snmp -n prometheus prometheus-community/prometheus-snmp-exporter
 kubectl expose deployment --port 9116 prometheus-snmp-prometheus-snmp-exporter -n prometheus --type=LoadBalancer --
 helm show values prometheus-community/prometheus-snmp-exporter > values.yaml
-helm upgrade prometheus-community/prometheus-snmp-exporter -f values.yaml -n prometheus
+helm upgrade prometheus-snmp prometheus-community/prometheus-snmp-exporter -n prometheus -f values.yaml
 
 name=snmpservice
 - job_name: 'snmpexporter'
