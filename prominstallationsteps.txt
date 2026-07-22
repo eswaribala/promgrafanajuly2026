@@ -141,6 +141,7 @@ helm install prometheus-operator-crds  prometheus-community/prometheus-operator-
 kubectl get crd servicemonitors.monitoring.coreos.com
 # retrieve value.yml
 helm show values prometheus-community/prometheus-snmp-exporter > values.yaml
+#modify sevice.monitor section enabled  true and params
 helm upgrade prometheus-snmp prometheus-community/prometheus-snmp-exporter -n prometheus -f values.yaml
 
 name=snmpservice
