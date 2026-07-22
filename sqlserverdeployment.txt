@@ -1,0 +1,20 @@
+#download sqlserverv1.yaml and sqlserverservice.yml
+kubectl apply -f  sqlserverv1.yaml
+kubectl apply -f  sqlserverservice.yml
+
+#test the pods
+kubectl get pods
+#test svc
+kubectl get svc
+
+#sql server client
+kubectl run mssql-client  --rm -it --image=mcr.microsoft.com/mssql-tools  --restart=Never -- /bin/bash
+#you will see # prompt
+sqlcmd -S mssql.default.svc.cluster.local,1403 -U SA -P 'Vignesh@95!' -Q "SELECT name FROM sys.databases;"
+#create database
+sqlcmd -S mssql.default.svc.cluster.local,1403 -U SA -P 'Vignesh@95!' -Q "create database IntelInventoryDB;"
+#create table
+sqlcmd -S mssql.default.svc.cluster.local,1403 -U SA -P 'Vignesh@95!' -d traderdb -Q "create table trader(id INT primary key, name varchar(100));"
+#insert data
+sqlcmd -S mssql.default.svc.cluster.local,1403 -U SA -P 'Vignesh@95!' -d traderdb -Q "insert into trader(id,name) values(100,'trader1');"
+
