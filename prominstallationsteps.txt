@@ -286,3 +286,10 @@ node_cpu_seconds_total{job="kubernetes-service-endpoints",instance="192.168.65.3
 #autoscale prometheus server 
 
 kubectl autoscale deployment <deploymentname> --min=1 --max=4 --cpu-percent=20
+
+# download webhook demo project
+#cd webhook project
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+#expose the service
+kubectl expose deployment --port 4000 nodejs-deployment --type=LoadBalancer --name=nodejsservicev1
