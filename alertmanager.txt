@@ -38,6 +38,9 @@ alertmanager:
                  *Severity:* {{ .Labels.severity }}
                  *Source:* {{ .GeneratorURL }}
                {{ end }}  
+      - name: 'pager-duty-notifications'
+        pagerduty_configs:
+        - service_key: ''  
       
       
    
