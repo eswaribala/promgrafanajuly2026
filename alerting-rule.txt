@@ -1,12 +1,42 @@
-alerting_rules.yml:  
-   groups:
-     - name: Instances
-       rules:
-         - alert: InstanceDown
-           expr: up == 0
-           for: 1m
-           labels:
-             severity: page
-           annotations:
-             description: '{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 1 minute.'
-             summary: 'Instance {{ $labels.instance }} down'
+alerting_rules.yml: 
+    groups:
+      - name: ConnectedInstances
+        rules:
+          - alert: InstanceDown
+            expr: up == 0
+            for: 1m
+            labels:
+              severity: critical
+            annotations:
+              description: '{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 1 minute.'
+              summary: 'Instance {{ $labels.instance }} down'
+      - name: WindowsExporterMetrics
+        rules:
+          - alert: Windows CPU usage is high at idle state
+            expr: 100*(1-avg by (instance)(rate(windows_cpu_time_total{mode="idle"}[5m]))) >20
+            for: 1m
+            labels:
+              severity: warning
+            annotations:
+              description: '{{ $labels.instance }} of job {{ $labels.job }} has been cpu usage high for more than 1 minute.'
+              summary: 'Alerting for {{ $labels.instance }} high cpu usage in windows os'
+      - name: SNMPMetrics
+        rules:
+          - alert: snmp_collection_duration_seconds Duration of collections by the SNMP exporter value greater than 0.1
+            expr: snmp_collection_duration_seconds_sum{module="if_mib"} > 0.1
+            for: 1m
+            labels:
+              severity: page
+            annotations:
+              description: '{{ $labels.instance }} of job {{ $labels.job }} snmp collection value gt 0.1'
+              summary: 'Alerting for {{ $labels.instance }} snmp collection value gt 0.1'
+      - name: JVMMetrics
+        rules:
+          - alert: JVM G1 Eden region above 20 MB
+            expr: jvm_memory_used_bytes{area="heap",id="G1 Eden Space"} /(1024*1024) >20
+            for: 1m
+            labels:
+              severity: page
+            annotations:
+              description: '{{ $labels.instance }} of job {{ $labels.job }} snmp collection value gt 0.1'
+              summary: 'Alerting for {{ $labels.instance }} JVM G1 Eden region above 20 MB'
