@@ -40,3 +40,37 @@ alerting_rules.yml:
             annotations:
               description: '{{ $labels.instance }} of job {{ $labels.job }} snmp collection value gt 0.1'
               summary: 'Alerting for {{ $labels.instance }} JVM G1 Eden region above 20 MB'
+      - name: WindowServerInhibit rules
+        rules:
+          - alert: WindowsLowAvailableMemory
+            expr: |
+              (
+                windows_memory_available_bytes{job="windows_exporter"}
+                /
+                windows_cs_physical_memory_bytes{job="windows_exporter"}
+              ) * 100 < 25
+            for: 2m
+            labels:
+              severity: critical
+              inhibit: "true"
+            annotations:
+              summary: "Critical low memory on {{ $labels.instance }}"
+              description: "Available memory on {{ $labels.instance }} is below 25% for more than 2 minutes."
+
+          # Warning target alert
+          - alert: WindowsHighMemoryUsage
+            expr: |
+              (
+                windows_memory_available_bytes{job="windows_exporter"}
+                /
+                windows_cs_physical_memory_bytes{job="windows_exporter"}
+              ) * 100 < 50
+            for: 2m
+            labels:
+              severity: warning
+              inhibited: "true"
+            annotations:
+              summary: "High memory usage on {{ $labels.instance }}"
+              description: "Available memory on {{ $labels.instance }} is below 50% for more than 2 minutes."
+
+     
