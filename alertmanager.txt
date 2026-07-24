@@ -41,7 +41,13 @@ alertmanager:
       - name: 'pager-duty-notifications'
         pagerduty_configs:
         - service_key: ''  
-      
+   
+   inhibit_rules:
+      - source_matchers:
+          - inhibit="true"
+        target_matchers:
+          - inhibited="true"
+        equal: ["instance", "job"]   
       
    
   persistence:
