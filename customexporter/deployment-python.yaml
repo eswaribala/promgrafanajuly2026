@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-deployment
+  labels:
+    app: metric-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: metric-app
+  template:
+    metadata:
+      labels:
+        app: metric-app
+    spec:
+      containers:
+      - name: metric-app
+        image: eswaribala/pythonmetricrepooct2024:metricexporter
+        ports:
+        - containerPort: 9877
+        env:
+        - name: NODE_ENV
+          value: "production"

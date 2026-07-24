@@ -1,0 +1,9 @@
+FROM python:3.11.4
+
+ADD . .
+RUN pip install -r /requirements.txt
+RUN mkdir -p /test
+WORKDIR /
+ENV PYTHONPATH '/'
+
+ENTRYPOINT ["python","metricexporter.py","-f", "test", "-e", "txt"]
