@@ -44,11 +44,7 @@ alerting_rules.yml:
         rules:
           - alert: WindowsLowAvailableMemory
             expr: |
-              (
-                windows_memory_available_bytes{job="windowsexporter"}
-                /
-                windows_cs_physical_memory_bytes{job="windowsexporter"}
-              ) * 100 < 25
+                                  (windows_memory_available_bytes{job="windowsexporter"}/windows_memory_physical_total_bytes{job="windowsexporter"}* 100) >10
             for: 2m
             labels:
               severity: critical
@@ -60,11 +56,7 @@ alerting_rules.yml:
           # Warning target alert
           - alert: WindowsHighMemoryUsage
             expr: |
-              (
-                windows_memory_available_bytes{job="windowsexporter"}
-                /
-                windows_cs_physical_memory_bytes{job="windowsexporter"}
-              ) * 100 < 50
+              (windows_memory_available_bytes{job="windowsexporter"}/windows_memory_physical_total_bytes{job="windowsexporter"}* 100) >5
             for: 2m
             labels:
               severity: warning
