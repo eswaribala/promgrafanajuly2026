@@ -1,0 +1,26 @@
+<h1>VOIS Menu</h1>
+<div class="row equal" style="margin:50px">
+<div class="box" style="background-color:red;width:35%;height:100px;color:white">
+<a href="#"><h2 style="text-align:center;padding:25px">Jaeger Dashboard
+</h2>
+</a>
+</div>
+<div class="box" style="background-color:green;width:35%;height:100px;color:white;margin-left:30px">
+<a href="http://localhost:3000/goto/PjIpRA3Ng?orgId=1"><h2 style="text-align:center;padding:25px">Influx DB Dashboard
+</h2>
+
+</a>
+</div>
+</div>
+<div  class="row equal" style="margin:50px">
+<div class="box" style="background-color:blue;width:35%;height:100px;color:white;">
+<a href="#"><h2 style="text-align:center;padding:25px">JSON API Dashbord</h2>
+
+</a>
+</div>
+<div class="box" style="background-color:yellow;width:35%;height:100px;color:white;margin-left:30px">
+<a href="#"><h2 style="text-align:center;padding:25px">Transformations Dashbord</h2>
+
+</a>
+</div>
+</div>
